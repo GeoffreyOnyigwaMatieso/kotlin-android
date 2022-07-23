@@ -178,3 +178,112 @@ while (num <= 10) {
 }
 ```
 *Output:* 1 2 3 4
+
+## Arrays
+Arrays are used to store a list of values.
+An array is declared with the `arrayOf` function.
+
+```kotlin
+var nums = arrayOf(1, 2, 3, 4, 5)
+```
+To output the second element in the array:
+
+```kotlin 
+println(nums[1])
+```
+You can also change the value of an element in the array:
+
+```kotlin
+nums[1] = 10
+```
+
+## For loops
+A for loop is used to iterate over a list of values.
+
+```kotlin
+var nums = arrayOf(1, 2, 3, 4, 5)
+for (num in nums) {
+    println(num)
+}
+```
+For loops can be used to iterate over characters in a string:
+
+```kotlin
+var str = "Hello"
+for (c in str) {
+    println(c)
+}
+```
+
+## Ranges
+Kotlin allows you to easily create ranges of values using the following syntax:
+
+```kotlin
+for (i in 1..10) {
+    println(i)
+}
+```
+You can also create ranges of characters:
+
+```kotlin
+for (c in 'a'..'z') {
+    println(c)
+}
+```
+
+You can check if a number is present in a value using in:
+
+```kotlin
+var num = 5
+if (num in 1..10) {
+    println("num is in the range")
+}
+```
+
+To iterate a number which does not include it's end element, use until:
+
+```kotlin
+for (i in 1 until 10) {
+    println(i)
+}
+```
+
+## Functions
+Functions are used to perform actions.
+Functions are defined using the `fun` keyword.
+After we have defined a function we call it in the code.
+
+```kotlin
+fun functionName(parameter: dataType) {
+    // function body
+}
+```
+**Function arguments**
+
+Arguments provide input to our functions.
+
+```kotlin
+fun functionName(parameter: dataType) {
+    // function body
+}
+```
+To call the function we use the function name followed by the arguments.
+
+```kotlin
+functionName(argument)
+```
+We can provide multiple arguments to a function.
+
+```kotlin
+fun functionName(parameter1: dataType, parameter2: dataType) {
+    // function body
+}
+```
+**Function return values**
+Functions can return values using the `return` keyword.
+
+```kotlin
+fun sum(a: Int, b: Int): Int {
+    return a + b
+}
+```

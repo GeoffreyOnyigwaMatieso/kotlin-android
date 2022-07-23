@@ -86,7 +86,7 @@
 * The given code uses an infinite while loop. to take continouous input,
 * You need to fix the program to stop the loop when the user enters 0 and output the number of inputs taken.*/
 
-fun main() {
+/*fun main() {
     var number = readLine()!!.toInt()
     var count = 0
     while (number != 0) {
@@ -94,4 +94,62 @@ fun main() {
         count++
     }
     println(count)
+}*/
+
+/*fun main() {
+    var r = 2..6
+    for (x in r) {
+        if (10 % x in r) {
+            println(x)
+        }
+    }
+}*/
+
+/*Problem
+8 You are making a car parking software that needs to calculate and output the amount due based on the number
+* of hours parked. The following are the rules:
+* The first 5 hours are billed at $1 per hour
+* after that, each hour is billed at $0.5 per hour
+* for each 24 hours, there is a flat fee of $15
+ */
+
+/*fun main() {
+    val hours = readLine()!!.toInt()
+    var sum = 0.0
+    if (hours >= 24) {
+        sum+=15
+        var rem = hours - 24
+        while(rem >= 24){
+            sum += 15
+            rem -= 24
+        }
+        sum+= rem * 0.5
+    }
+    else if (hours <= 5) {
+        sum+=hours*1
+    }
+    else if(hours>5 && hours<24){
+        sum+=5
+        val rem = hours - 5
+        sum+= rem * 0.5
+    }
+    println(sum)
+}*/
+
+/*Problem
+* Function that takes a letter and a text as arguments and returns the number of times the letter appears in the text*/
+fun letter_count(letter: Char, text: String): Int {
+    var count = 0
+    for (x in text) {
+        if (x == letter) {
+            count++
+        }
+    }
+    return count
+}
+fun main() {
+    val letter: Char = readLine()!![0]
+    val text: String = readLine()!!
+    val result = letter_count(letter, text)
+    println(result)
 }
