@@ -88,3 +88,93 @@ Returns the input as a string to convert to an integer:
 ```kotlin
 var input = readLine()!!.toInt()
 ```
+
+## Control flow
+**If-else**
+
+```kotlin
+if (num == 1) {
+    println("num is 1")
+} else {
+    println("num is not 1")
+}
+```
+
+*Checking multiple conditions*
+
+```kotlin
+if (num == 1) {
+    println("num is 1")
+} else if (num == 2) {
+    println("num is 2")
+} else {
+    println("num is not 1 or 2")
+}
+```
+
+## Conditional Expressions
+A useful feature of Kotlin is the use of if statements to assign a value to a variable.
+
+```kotlin
+var num = -5
+var result = if (num > 0) {
+    "positive"
+} else {
+    "negative"
+}
+```
+**Note:** If we have only one line of code we can omit the curly braces`{}`
+        
+```kotlin
+var num = -5
+var result = if (num > 0) "positive" else "negative"
+```
+
+As complexity increases, you can replace if/else with when statements.
+
+```kotlin
+var num = -5
+var result = when (num) {
+    0 -> "zero"
+    1 -> "one"
+    else -> "other"
+}
+```
+
+Each branch in a when statement is represented by a condition, an arrow `->`, and a block of code.
+
+You can combine multiple conditions with `&&` and `||`.
+
+```kotlin
+var num = -5
+if (num >=18 || num <= 7) {
+    println("num is between 7 and 18")
+}
+```
+
+## While loops
+A while loop is used to execute a block of code while a condition is true.
+
+```kotlin
+var num = 1
+while (num <= 10) {
+    println(num)
+    num++
+}
+```
+*Output:* 1 2 3 4 5 6 7 8 9 10
+
+## Break and Continue
+Break is used to exit a loop. Continue is used to skip the current iteration of a loop.
+
+```kotlin
+var num = 1
+while (num <= 10) {
+    if (num == 5) {
+        break
+    }
+    println(num)
+    num++
+}
+```
+*Output:* 1 2 3 4

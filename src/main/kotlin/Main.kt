@@ -2,7 +2,7 @@
 * Each day a family consumes 15 litres of water
 * Given the number of years as input, you need to calculate and output the amount of water
 * consumed in that period*/
-fun main() {
+/*fun main() {
     /* val name = readln()
     //println("Hello, $name!")
     val age = readLine()!!.toInt()
@@ -11,4 +11,87 @@ fun main() {
     val years = readLine()!!.toInt()
     val water = 15 * 365 * years
     println("The water consumption is $water litres.")
+    if (water >= 2000) {
+        println("You are a very efficient person!")
+    } else {
+        println("You are not an efficient person!")
+    }
+}*/
+
+/*Problem
+* You are making a program for a security system that opens/closes the door based on the time
+* of the day. Your program needs to take the hour as input
+* (from 0 to 24) and output "Open", if it's less than or equal to 18, and "Closed" in other cases.*/
+
+/*fun main(){
+    val hour = readLine()!!.toInt()
+    if (hour <=18) {
+        println("Open")
+    }
+    else {
+        println("Closed")
+    }
+}*/
+
+/*Problem
+* Given an age as input, you need to output the age group according to the following categories:
+* 0-2: "Still in Mama's arms"
+* 3-4: "Preschool Maniac"
+* 5-11: "Elementary school"
+* 12-14: "Middle school"
+* 15-18: "High school"
+* 19-22: "College"
+*
+* In case the age is negative, output "This is not possible".*/
+
+/*fun main() {
+    val age = readLine()!!.toInt()
+    if (age in 0..2){
+        println("Still in Mama's arms")
+    }
+    else if (age in 3..4){
+        println("Preschool Maniac")
+    }
+    else if (age in 5..11){
+        println("Elementary school")
+    }
+    else if (age in 12..14){
+        println("Middle school")
+    }
+    else if (age in 15..18){
+        println("High school")
+    }
+    else if (age in 19..22){
+        println("College")
+    }
+    else {
+        println("This is not possible")
+    }
+}*/
+
+/*Problem
+* Given a number as input, calculate and output its digit sum
+ */
+/*fun main () {
+    var number = readLine()!!.toInt()
+    var sum = 0
+    while (number > 0){
+        sum += number % 10
+        number /= 10
+    }
+    println(sum)
+}*/
+
+/*Problem
+* The given code uses an infinite while loop. to take continouous input,
+* You need to fix the program to stop the loop when the user enters 0 and output the number of inputs taken.*/
+
+fun main() {
+    var number = readLine()!!.toInt()
+    var count = 0
+    while (number != 0) {
+        number = readLine()!!.toInt()
+        count++
+    }
+    println(count)
 }
