@@ -287,3 +287,50 @@ fun sum(a: Int, b: Int): Int {
     return a + b
 }
 ```
+
+## Anonymous functions
+Anonymous functions are used to create a function without a name.
+
+```kotlin  
+val f: (Int, Int) -> Int = { x, y -> x + y }
+```
+
+## forEach loops
+forEach loops are used to iterate over a list of values.
+
+```kotlin
+fun main() {
+    val nums = arrayOf(1, 2, 3, 4, 5)
+    nums.forEach { num ->
+        println(num * 2)
+    }
+}
+```
+*Output:* 2 4 6 8 10
+
+Kotlin provides a way to shorten the above code by using the `it` keyword.
+
+```kotlin
+fun main() {
+    val nums = arrayOf(1, 2, 3, 4, 5)
+    nums.forEach { 
+        println(it * 2)
+    }
+}
+```
+
+## Higher order functions
+A higher order function is a function that takes a function as an argument.
+
+```kotlin
+fun apply(x:Int, action: (Int) -> Int): Int {
+    return action(x)
+}
+```
+`filter()` function of an array takes a boolean function and returns the elements that satisfy the condition.
+
+```kotlin
+val nums = arrayOf(1, 2, 3, 4, 5)
+val evenNums = nums.filter { it % 2 == 0 }
+println(evenNums)
+```

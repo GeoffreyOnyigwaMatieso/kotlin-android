@@ -138,7 +138,7 @@
 
 /*Problem
 * Function that takes a letter and a text as arguments and returns the number of times the letter appears in the text*/
-fun letter_count(letter: Char, text: String): Int {
+/*fun letter_count(letter: Char, text: String): Int {
     var count = 0
     for (x in text) {
         if (x == letter) {
@@ -151,5 +151,40 @@ fun main() {
     val letter: Char = readLine()!![0]
     val text: String = readLine()!!
     val result = letter_count(letter, text)
+    println(result)
+}*/
+
+/*Problem
+* Shipping Calculator
+* You are making a program for a ecommerce website. The company needs to calculate the shipping cost based on the
+* order amount
+* The following are the rules:
+* $75+ orders have free shipping
+* Orders less than $75 are shipped for 10% of the order amount
+* For international orders there is a 15% shipping fee with a maximum of $50
+ */
+
+fun shippingCost(amount:Double, international:Boolean):Double{
+    if (! international){
+        if (amount < 75){
+            return 0.0
+        }
+        else{
+            return 0.1*amount
+        }
+    }
+    else{
+        val ship = 0.15 * amount
+        return if (ship > 50){
+            50.0
+        } else{
+            ship
+        }
+    }
+}
+fun main() {
+    val amount = readLine()!!.toDouble()
+    val international = readLine()!!.toBoolean()
+    val result = shippingCost(amount, international)
     println(result)
 }
