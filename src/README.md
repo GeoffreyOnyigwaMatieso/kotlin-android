@@ -1,6 +1,7 @@
-# KOTLIN BASICS
-
-## Data types
+# KOTLIN
+## Basic Syntax
+<details>
+<summary>Data types</summary>
 Integer: `int` indicates a whole number.
 
 Float: `float` indicates a number with a decimal point.
@@ -14,8 +15,10 @@ Boolean: `boolean` indicates a true or false value.
 String: `String` indicates a sequence of characters.
 
 `\n` is used to indicate a new line.
+</details>
 
-## Variables
+<details>
+<summary>Variables</summary>
 Variables are used to store values. They are declared with the `var` keyword.
 
 ```kotlin
@@ -45,8 +48,10 @@ Kotlin will automatically infer the type of a variable.
 ```kotlin
 var num = 1
 ```
+</details>
 
-## Operators
+<details>
+<summary>Operators</summary>
 Operators are used to perform actions on variables.
 
 ```kotlin
@@ -69,15 +74,27 @@ Kotlin also supports increment and decrement operators: `++`, `--`.
 num == 1
 ```
 Kotlin also supports comparison operators: `==`, `!=`, `<`, `<=`, `>`, `>=`.
+</details>
 
-## Comments
+<details>
+<summary>Comments</summary>
 Comments are used to explain code.
 
 ```kotlin
 // This is a comment
 ```
 
-## Input
+This is also a comment.
+
+```kotlin
+/*
+This is also a comment
+*/
+```
+</details>
+
+<details>
+<summary>Input</summary>
 Input is used to get user input.
 
 ```kotlin
@@ -88,8 +105,11 @@ Returns the input as a string to convert to an integer:
 ```kotlin
 var input = readLine()!!.toInt()
 ```
+</details>
 
-## Control flow
+<details>
+<summary>Control flow</summary>
+
 **If-else**
 
 ```kotlin
@@ -111,8 +131,10 @@ if (num == 1) {
     println("num is not 1 or 2")
 }
 ```
+</details>
 
-## Conditional Expressions
+<details>
+<summary>Conditional Expressions</summary>
 A useful feature of Kotlin is the use of if statements to assign a value to a variable.
 
 ```kotlin
@@ -151,8 +173,10 @@ if (num >=18 || num <= 7) {
     println("num is between 7 and 18")
 }
 ```
+</details>
 
-## While loops
+<details>
+<summary>While loops</summary>
 A while loop is used to execute a block of code while a condition is true.
 
 ```kotlin
@@ -163,8 +187,10 @@ while (num <= 10) {
 }
 ```
 *Output:* 1 2 3 4 5 6 7 8 9 10
+</details>
 
-## Break and Continue
+<details>
+<summary>Break and Continue</summary>
 Break is used to exit a loop. Continue is used to skip the current iteration of a loop.
 
 ```kotlin
@@ -178,8 +204,10 @@ while (num <= 10) {
 }
 ```
 *Output:* 1 2 3 4
+</details>
 
-## Arrays
+<details>
+<summary>Arrays </summary>
 Arrays are used to store a list of values.
 An array is declared with the `arrayOf` function.
 
@@ -196,8 +224,10 @@ You can also change the value of an element in the array:
 ```kotlin
 nums[1] = 10
 ```
+</details>
 
-## For loops
+<details>
+<summary>For loops</summary>
 A for loop is used to iterate over a list of values.
 
 ```kotlin
@@ -214,8 +244,35 @@ for (c in str) {
     println(c)
 }
 ```
+</details>
+<details>
+<summary>forEach loops</summary>
+forEach loops are used to iterate over a list of values.
 
-## Ranges
+```kotlin
+fun main() {
+    val nums = arrayOf(1, 2, 3, 4, 5)
+    nums.forEach { num ->
+        println(num * 2)
+    }
+}
+```
+*Output:* 2 4 6 8 10
+
+Kotlin provides a way to shorten the above code by using the `it` keyword.
+
+```kotlin
+fun main() {
+    val nums = arrayOf(1, 2, 3, 4, 5)
+    nums.forEach { 
+        println(it * 2)
+    }
+}
+```
+</details>
+
+<details>
+<summary>Ranges</summary>
 Kotlin allows you to easily create ranges of values using the following syntax:
 
 ```kotlin
@@ -247,8 +304,10 @@ for (i in 1 until 10) {
     println(i)
 }
 ```
+</details>
 
-## Functions
+<details>
+<summary>Functions</summary>
 Functions are used to perform actions.
 Functions are defined using the `fun` keyword.
 After we have defined a function we call it in the code.
@@ -287,39 +346,19 @@ fun sum(a: Int, b: Int): Int {
     return a + b
 }
 ```
+</details>
 
-## Anonymous functions
+<details>
+<summary>Anonymous functions</summary>
 Anonymous functions are used to create a function without a name.
 
 ```kotlin  
 val f: (Int, Int) -> Int = { x, y -> x + y }
 ```
+</details>
 
-## forEach loops
-forEach loops are used to iterate over a list of values.
-
-```kotlin
-fun main() {
-    val nums = arrayOf(1, 2, 3, 4, 5)
-    nums.forEach { num ->
-        println(num * 2)
-    }
-}
-```
-*Output:* 2 4 6 8 10
-
-Kotlin provides a way to shorten the above code by using the `it` keyword.
-
-```kotlin
-fun main() {
-    val nums = arrayOf(1, 2, 3, 4, 5)
-    nums.forEach { 
-        println(it * 2)
-    }
-}
-```
-
-## Higher order functions
+<details>
+<summary>Higher order functions</summary>
 A higher order function is a function that takes a function as an argument.
 
 ```kotlin
@@ -334,8 +373,10 @@ val nums = arrayOf(1, 2, 3, 4, 5)
 val evenNums = nums.filter { it % 2 == 0 }
 println(evenNums)
 ```
+</details>
 
-## Classes
+<details>
+<summary>Classes</summary>
 Object Oriented Programming allows us to create objevts and use them in our program
 Objects can hold data and have function to model behaviour.
 For example: a dog object can have a name and a breed.
@@ -354,8 +395,10 @@ class Dog {
     }
 }
 ```
+</details>
 
-## Constructors
+<details>
+<summary>Constructors</summary>
 Constructors are used to initialize the values of the properties of a class.
 
 ```kotlin
@@ -386,3 +429,6 @@ class User{
 }
 ```
 Our user has two constructors
+</details>
+
+## Idioms
