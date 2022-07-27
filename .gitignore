@@ -1,3 +1,7 @@
 /out/
 /.idea/
+dist/*
+target/
+*.class
+*.log
 kotlin-android.iml
