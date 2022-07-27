@@ -334,3 +334,55 @@ val nums = arrayOf(1, 2, 3, 4, 5)
 val evenNums = nums.filter { it % 2 == 0 }
 println(evenNums)
 ```
+
+## Classes
+Object Oriented Programming allows us to create objevts and use them in our program
+Objects can hold data and have function to model behaviour.
+For example: a dog object can have a name and a breed.
+and actions like barking, eating, sleeping.
+
+In order to create a class we use the `class` keyword. A class is like a blueprint for an object.
+It defines the data and functions that the object will have.
+When we have our class defined, we can create objects from it.
+
+```kotlin
+class Dog {
+    var name = ""
+    var breed = ""
+    fun bark() {
+        println("Woof")
+    }
+}
+```
+
+## Constructors
+Constructors are used to initialize the values of the properties of a class.
+
+```kotlin
+class User(var name: String, var age: Int) {
+    init {
+        println("User created: $name, $age")
+    }
+}
+```
+
+Now when creating a new object from the class, we can provide the values for the properties.
+
+```kotlin
+val user = User("John", 30)
+println(user.name)
+```
+
+Kotlin allows you to create multiple constructors using the `constructor` keyword.
+
+```kotlin
+class User{
+    constructor(name: String) {
+        println("User created: $name")
+    }
+    constructor(name: String, age: Int) {
+        println("User created: $name, $age")
+    }
+}
+```
+Our user has two constructors
