@@ -431,4 +431,32 @@ class User{
 Our user has two constructors
 </details>
 
-## Idioms
+
+## Concepts
+<details>
+<summary>Types</summary>
+
+### Basic types
+**Numbers**
+For integer numbers, there are four types with different sizes:
+Byte (8 bits), Short (16 bits), Int (32 bits), Long (64 bits).
+```kotlin
+val one = 1 // Int
+val threeBillion = 3000000000 // Long
+val oneLong = 1L // Long
+val oneByte: Byte = 1 // Byte
+```
+
+**Floating-point types**
+Example of floating-point numbers:
+Float (32 bits), Double (64 bits).
+```kotlin
+val pi = 3.14 // Double
+val eFloat = 2.71828f // Float
+```
+
+You can use `_` to make number notations more readable.
+```kotlin
+val oneMillion = 1_000_000 // Int
+val creditCardNumber = 1234_5678_9012_3456L // Long
+```
