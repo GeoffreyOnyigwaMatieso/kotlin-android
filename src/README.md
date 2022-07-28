@@ -575,4 +575,22 @@ val asc = Array(5) { i -> (i * i).toString() }
 asc.forEach { println(it) }
 // Creates an Array<String> with values ["0", "1", "4", "9", "16"]
 ```
+
+### Type checks and casts
+
+**is and !is**
+`is` and `!is` are used to check if an object is of a certain type.
+
+```kotlin
+if (a is String) {
+    println("a is a String")
+}
+
+if (a !is String) {
+    println("a is not a String")
+}
+else{
+    println(a.length)
+}
+```
 </details>
