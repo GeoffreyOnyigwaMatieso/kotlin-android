@@ -339,6 +339,7 @@ fun functionName(parameter1: dataType, parameter2: dataType) {
 }
 ```
 **Function return values**
+
 Functions can return values using the `return` keyword.
 
 ```kotlin
@@ -438,6 +439,7 @@ Our user has two constructors
 
 ### Basic types
 **Numbers**
+
 For integer numbers, there are four types with different sizes:
 Byte (8 bits), Short (16 bits), Int (32 bits), Long (64 bits).
 ```kotlin
@@ -448,6 +450,7 @@ val oneByte: Byte = 1 // Byte
 ```
 
 **Floating-point types**
+
 Example of floating-point numbers:
 Float (32 bits), Double (64 bits).
 ```kotlin
@@ -462,6 +465,7 @@ val creditCardNumber = 1234_5678_9012_3456L // Long
 ```
 
 *Division of integers*
+
 Division between integers is always returns an integer.
 For example:
 ```kotlin
@@ -476,11 +480,13 @@ val x = 5 / 2.toDouble()
 println(x == 2.5) // true
 ```
 **Floating-pint numbers comparison**
+
 * Equality checks `a == b` and `a != b `
 * Comparison checks `a < b`, `a > b`, `a <= b`, `a >= b`
 * Range instantiation and range checks `a..b`, `x in a..b`, `x !in a..b`
 
 **Booleans**
+
 Booleans are used to represent a true or false value.
 Boolean has a nullable counterpart Boolean? that also has the null value.
 
@@ -499,6 +505,7 @@ println(myNullableBoolean == null) // true
 ```
 
 **Characters**
+
 Characters are represented by the type char. Character literals go in single quotes.
 
 ```kotlin
@@ -510,6 +517,7 @@ Examples:
 `\t`, `\b`, `\n`, `\r`, `\$`, `\$`, `\`', `\\`
 
 **Strings**
+
 Strings are represented by the type String. String literals go in double quotes.
 
 ```kotlin
@@ -557,6 +565,7 @@ val text = """
 ```
 
 **Arrays**
+
 To create an array, use the `arrayOf` function, so that `arrayOf(1, 2, 3)` creates an array of size 3 and the elements are 1, 2, 3.
 Alternatively the `arrayOfNulls` function can be used to create an array of a given size with null values.
 Another option is to use the `Array` constructor that takes the array size and the function that returns the values of array elements given its index.
@@ -566,3 +575,4 @@ val asc = Array(5) { i -> (i * i).toString() }
 asc.forEach { println(it) }
 // Creates an Array<String> with values ["0", "1", "4", "9", "16"]
 ```
+</details>
