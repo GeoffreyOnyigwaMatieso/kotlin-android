@@ -460,3 +460,109 @@ You can use `_` to make number notations more readable.
 val oneMillion = 1_000_000 // Int
 val creditCardNumber = 1234_5678_9012_3456L // Long
 ```
+
+*Division of integers*
+Division between integers is always returns an integer.
+For example:
+```kotlin
+val a = 10
+val b = 3
+val c = a / b
+println(c == 3) // true
+```
+To return a floating point explicitly convert one of the numbers to a floating point number.
+```kotlin
+val x = 5 / 2.toDouble()
+println(x == 2.5) // true
+```
+**Floating-pint numbers comparison**
+* Equality checks `a == b` and `a != b `
+* Comparison checks `a < b`, `a > b`, `a <= b`, `a >= b`
+* Range instantiation and range checks `a..b`, `x in a..b`, `x !in a..b`
+
+**Booleans**
+Booleans are used to represent a true or false value.
+Boolean has a nullable counterpart Boolean? that also has the null value.
+
+Built-in operations on booleans include:
+* Logical `&&`, `||`, `!`
+
+```kotlin
+val myTrue: Boolean = true
+val myFalse: Boolean = false
+val myNullableBoolean: Boolean? = null
+
+println(myTrue && myFalse) // false
+println(myTrue || myFalse) // true
+println(!myTrue) // false
+println(myNullableBoolean == null) // true
+```
+
+**Characters**
+Characters are represented by the type char. Character literals go in single quotes.
+
+```kotlin
+val aChar: Char = 'a'
+println(aChar) // a
+```
+Special characters start from an escaping backlash `\`
+Examples: 
+`\t`, `\b`, `\n`, `\r`, `\$`, `\$`, `\`', `\\`
+
+**Strings**
+Strings are represented by the type String. String literals go in double quotes.
+
+```kotlin
+val aString: String = "Hello Lynne"
+println(aString) // Hello Lynne
+```
+You can iterate over a string using a for loop:
+```kotlin
+for (char in aString) {
+    println(char)
+}
+```
+Strings are immutable. Once you initialize a string, you cannot change it or assign a new value to it.
+All operations on strings return a new string leaving the original string unchanged.
+
+```kotlin
+val aString = "Hello"
+println(aString.uppercase()) // HELLO
+println(aString) // the original string remains the same
+```
+
+Kotlin has two types of string literals:
+* escaped strings that may contain escaped characters
+* raw strings that can contain newlines and abitrary text
+
+Example of an escaped string:
+```kotlin
+val s = "Hello \n World"
+```
+
+A raw string is delimited by triple quotes (`"""`)
+```kotlin
+val s = """
+    Hello
+    World
+"""
+```
+To remove leading whitespace from raw stringsm use the `trimMargin` function.
+```kotlin
+val text = """
+    |First Line
+    |Second Line
+    |Third Line
+""".trimMargin()
+```
+
+**Arrays**
+To create an array, use the `arrayOf` function, so that `arrayOf(1, 2, 3)` creates an array of size 3 and the elements are 1, 2, 3.
+Alternatively the `arrayOfNulls` function can be used to create an array of a given size with null values.
+Another option is to use the `Array` constructor that takes the array size and the function that returns the values of array elements given its index.
+
+```kotlin
+val asc = Array(5) { i -> (i * i).toString() }
+asc.forEach { println(it) }
+// Creates an Array<String> with values ["0", "1", "4", "9", "16"]
+```
