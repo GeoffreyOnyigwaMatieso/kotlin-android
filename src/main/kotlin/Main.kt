@@ -192,7 +192,7 @@ fun main() {
 /**
  *
  */
-fun main(){
+/* fun main(){
     val age = (readLine() ?: return).toInt()
     val border = "`-._,-'"
     val times = 4
@@ -206,7 +206,7 @@ fun main(){
     println()
     println("You are already $age years old!")
     println("$age is the very best age to celebrate!")
-}
+}*/
 
 /**
  *
@@ -215,7 +215,7 @@ fun main(){
     println("=======================")
 }*/
 
-fun printBorder(border: String = "====", times: Int = 1) {
+/*fun printBorder(border: String = "====", times: Int = 1) {
     repeat(times) {
         print(border)
     }
@@ -248,5 +248,31 @@ fun printCakeBottom(age: Int, layers: Int) {
             print("@")
         }
         println()
+    }
+}*/
+
+/*
+    * Dice Game
+*/
+fun main(){
+/* Create an instance of Dice class */
+    val myFirstDice = Dice(20)
+    println("Rolling the dice...")
+    println("The result is ${myFirstDice.rollDice()}")
+}
+
+/**
+ *
+ */
+class Dice(
+    /**
+     * Class properties
+     */
+    private val numOfSides: Int = 6) {
+    /**
+     * number of Sides
+     */
+    fun rollDice(): Int {
+        return (1..numOfSides).random()
     }
 }
