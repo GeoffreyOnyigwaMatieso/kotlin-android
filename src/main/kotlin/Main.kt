@@ -164,7 +164,7 @@ fun main() {
 * For international orders there is a 15% shipping fee with a maximum of $50
  */
 
-fun shippingCost(amount:Double, international:Boolean):Double{
+/*fun shippingCost(amount:Double, international:Boolean):Double{
     if (! international){
         if (amount < 75){
             return 0.0
@@ -187,4 +187,66 @@ fun main() {
     val international = readLine()!!.toBoolean()
     val result = shippingCost(amount, international)
     println(result)
+}*/
+
+/**
+ *
+ */
+fun main(){
+    val age = (readLine() ?: return).toInt()
+    val border = "`-._,-'"
+    val times = 4
+    printBorder(border, times)
+    println("Happy Birthday Lynne!")
+    printBorder(border, times)
+    println()
+
+    printCakeCandles(age)
+    printCakeBottom(age, 7)
+    println()
+    println("You are already $age years old!")
+    println("$age is the very best age to celebrate!")
+}
+
+/**
+ *
+ */
+/*fun printBorder() {
+    println("=======================")
+}*/
+
+fun printBorder(border: String = "====", times: Int = 1) {
+    repeat(times) {
+        print(border)
+    }
+    println()
+}
+
+/**
+ *Print cake
+ */
+fun printCakeCandles(age: Int) {
+    print(" ")
+    repeat(age) {
+        print(",")
+    }
+    println() // Print an empty line
+
+    print(" ") // Print the inset of the candles on the cake
+    repeat(age) {
+        print("|")
+    }
+    println()
+}
+
+/**
+ *Print CakeBottom
+ */
+fun printCakeBottom(age: Int, layers: Int) {
+    repeat(layers) {
+        repeat(age + 2) {
+            print("@")
+        }
+        println()
+    }
 }
