@@ -286,25 +286,25 @@ fun main() {
     val squareCabin = SquareCabin(6)
     with(squareCabin) {
         println("\nSquare Cabin\n============")
-        println("Capacity: ${squareCabin.capacity}")
-        println("Material: ${squareCabin.buildingMaterial}")
-        println("Has room? ${squareCabin.hasRoom()}")
+        println("Capacity: $capacity")
+        println("Material: $buildingMaterial")
+        println("Has room? ${hasRoom()}")
     }
 
     val roundHut = RoundHut(3)
     with (roundHut) {
         println("\nRound Hut\n=========")
-        println("Capacity: ${roundHut.capacity}")
-        println("Material: ${roundHut.buildingMaterial}")
-        println("Has room? ${roundHut.hasRoom()}")
+        println("Capacity: $capacity")
+        println("Material: $buildingMaterial")
+        println("Has room? ${hasRoom()}")
     }
 
     val roundTower = RoundTower(8)
     with (roundTower) {
         println("\nRound Tower\n===========")
-        println("Capacity: ${roundTower.capacity}")
-        println("Material: ${roundTower.buildingMaterial}")
-        println("Has room? ${roundTower.hasRoom()}")
+        println("Capacity: $capacity")
+        println("Material: $buildingMaterial")
+        println("Has room? ${hasRoom()}")
     }
 
 }
