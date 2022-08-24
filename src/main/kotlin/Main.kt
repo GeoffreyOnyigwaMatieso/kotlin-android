@@ -1,3 +1,6 @@
+import kotlin.math.PI
+
+
 /* Problem
 * Each day a family consumes 15 litres of water
 * Given the number of years as input, you need to calculate and output the amount of water
@@ -283,28 +286,33 @@ class Dice(
 */
 
 fun main() {
-    val squareCabin = SquareCabin(6)
+    val squareCabin = SquareCabin(6, 50.0)
     with(squareCabin) {
         println("\nSquare Cabin\n============")
         println("Capacity: $capacity")
         println("Material: $buildingMaterial")
         println("Has room? ${hasRoom()}")
+        getRoom()
+        println("Floor area: %.2f" .format(floorArea()))
     }
 
-    val roundHut = RoundHut(3)
+    val roundHut = RoundHut(3, 20.0)
     with (roundHut) {
         println("\nRound Hut\n=========")
         println("Capacity: $capacity")
         println("Material: $buildingMaterial")
         println("Has room? ${hasRoom()}")
+        getRoom()
+        println("Floor area: %.2f" .format(floorArea()))
     }
 
-    val roundTower = RoundTower(8, 5)
+    val roundTower = RoundTower(8, 5, 20.0)
     with (roundTower) {
         println("\nRound Tower\n===========")
         println("Capacity: $capacity")
         println("Material: $buildingMaterial")
         println("Has room? ${hasRoom()}")
+        println("Floor area: %.2f" .format(floorArea()))
     }
 
 }
@@ -328,28 +336,64 @@ abstract class Dwelling(private var residents: Int) {
     fun hasRoom(): Boolean {
         return residents < capacity
     }
+
+    /**
+     * Checks if a new person can be added to the dwelling
+     */
+    fun getRoom() {
+        if (hasRoom()) {
+            residents++
+            println("You got a room!!")
+        } else {
+            println("Sorry, at capacity and no rooms available")
+        }
+    }
+
+    /**
+     * Abstract function to be implemented in the subclasses
+     */
+    abstract fun floorArea(): Double // Abstract method
 }
 
 /**
  * Class SquareCabin
  */
-class SquareCabin(residents: Int) : Dwelling(residents) {
+class SquareCabin(residents: Int, val length: Double) : Dwelling(residents) {
     override val buildingMaterial: String = "Wood"
     override val capacity: Int = 6
+
+    /**
+     * Calculates the floor area of the square cabin
+     */
+
+    // Override the abstract method
+    override fun floorArea(): Double {
+        return length * length
+    }
 }
 
 /**
  * Class RoundHut
  */
-open class RoundHut(residents: Int) : Dwelling(residents) {
+open class RoundHut(residents: Int, val radius: Double) : Dwelling(residents) {
     override val buildingMaterial: String = "Straw"
     override val capacity: Int = 4
+
+    // Override the abstract method
+    override fun floorArea(): Double {
+        return Math.PI * radius * radius
+    }
 }
 
 /**
  * Class RoundTower that inherits from RoundHut
  */
-class RoundTower(residents: Int, val floors: Int = 2) : RoundHut (residents) {
+class RoundTower(residents: Int, val floors: Int = 2, radius: Double) : RoundHut (residents, radius) {
     override val buildingMaterial: String = "Brick"
     override val capacity: Int = 8 * floors
+
+    // Override the abstract method
+    override fun floorArea(): Double {
+        return super.floorArea() * floors
+    }
 }
