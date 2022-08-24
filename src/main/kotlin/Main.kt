@@ -299,7 +299,7 @@ fun main() {
         println("Has room? ${hasRoom()}")
     }
 
-    val roundTower = RoundTower(8)
+    val roundTower = RoundTower(8, 5)
     with (roundTower) {
         println("\nRound Tower\n===========")
         println("Capacity: $capacity")
@@ -349,7 +349,7 @@ open class RoundHut(residents: Int) : Dwelling(residents) {
 /**
  * Class RoundTower that inherits from RoundHut
  */
-class RoundTower(residents: Int) : RoundHut (residents) {
+class RoundTower(residents: Int, val floors: Int = 2) : RoundHut (residents) {
     override val buildingMaterial: String = "Brick"
-    override val capacity: Int = 8
+    override val capacity: Int = 8 * floors
 }
