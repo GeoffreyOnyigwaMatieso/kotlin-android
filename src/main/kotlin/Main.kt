@@ -299,6 +299,14 @@ fun main() {
         println("Has room? ${roundHut.hasRoom()}")
     }
 
+    val roundTower = RoundTower(8)
+    with (roundTower) {
+        println("\nRound Tower\n===========")
+        println("Capacity: ${roundTower.capacity}")
+        println("Material: ${roundTower.buildingMaterial}")
+        println("Has room? ${roundTower.hasRoom()}")
+    }
+
 }
 
 /**
@@ -330,8 +338,18 @@ class SquareCabin(residents: Int) : Dwelling(residents) {
     override val capacity: Int = 6
 }
 
-class RoundHut(residents: Int) : Dwelling(residents) {
+/**
+ * Class RoundHut
+ */
+open class RoundHut(residents: Int) : Dwelling(residents) {
     override val buildingMaterial: String = "Straw"
     override val capacity: Int = 4
 }
 
+/**
+ * Class RoundTower that inherits from RoundHut
+ */
+class RoundTower(residents: Int) : RoundHut (residents) {
+    override val buildingMaterial: String = "Brick"
+    override val capacity: Int = 8
+}
