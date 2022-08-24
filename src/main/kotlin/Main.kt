@@ -254,7 +254,7 @@ fun printCakeBottom(age: Int, layers: Int) {
 /*
     * Dice Game
 */
-fun main(){
+/* fun main(){
 /* Create an instance of Dice class */
     val myFirstDice = Dice(20)
     println("Rolling the dice...")
@@ -275,4 +275,51 @@ class Dice(
     fun rollDice(): Int {
         return (1..numOfSides).random()
     }
+} */
+
+
+/**
+* Abstract Class Dwelling
+*/
+
+fun main() {
+    val squareCabin = SquareCabin(6)
+    with(squareCabin) {
+        println("\nSquare Cabin\n============")
+        println("Capacity: ${squareCabin.capacity}")
+        println("Material: ${squareCabin.buildingMaterial}")
+        println("Has room? ${squareCabin.hasRoom()}")
+    }
+
+
 }
+
+/**
+ * Abstract Class Dwelling
+ */
+abstract class Dwelling(private var residents: Int) {
+    /**
+     *
+     */
+    abstract val buildingMaterial: String
+    /**
+     *
+     */
+    abstract val capacity: Int
+
+    /**
+     * Checks if the dwelling has a room or not
+     */
+    fun hasRoom(): Boolean {
+        return residents < capacity
+    }
+}
+
+/**
+ * Class SquareCabin
+ */
+class SquareCabin(residents: Int) : Dwelling(residents) {
+    override val buildingMaterial: String = "Wood"
+    override val capacity: Int = 6
+}
+
