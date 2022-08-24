@@ -1,6 +1,3 @@
-import kotlin.math.PI
-
-
 /* Problem
 * Each day a family consumes 15 litres of water
 * Given the number of years as input, you need to calculate and output the amount of water
@@ -285,6 +282,16 @@ class Dice(
 * Abstract Class Dwelling
 */
 
+/**
+ * Program that implements classes for different kinds of dwellings.
+ * Shows how to:
+ * Create class hierarchy, variables and functions with inheritance,
+ * abstract class, overriding, and private vs. public variables.
+ */
+
+import kotlin.math.PI
+import kotlin.math.sqrt
+
 fun main() {
     val squareCabin = SquareCabin(6, 50.0)
     with(squareCabin) {
@@ -304,6 +311,7 @@ fun main() {
         println("Has room? ${hasRoom()}")
         getRoom()
         println("Floor area: %.2f" .format(floorArea()))
+        println("Carpet Length: ${calculateMaxCarpetLength()}")
     }
 
     val roundTower = RoundTower(8, 5, 20.0)
@@ -313,6 +321,7 @@ fun main() {
         println("Material: $buildingMaterial")
         println("Has room? ${hasRoom()}")
         println("Floor area: %.2f" .format(floorArea()))
+        println("Carpet Length: ${calculateMaxCarpetLength()}")
     }
 
 }
@@ -382,6 +391,13 @@ open class RoundHut(residents: Int, val radius: Double) : Dwelling(residents) {
     // Override the abstract method
     override fun floorArea(): Double {
         return Math.PI * radius * radius
+    }
+
+    /**
+     * Calculates the maximum carpet length
+     */
+    fun calculateMaxCarpetLength(): Double {
+        return sqrt(2.0) * radius
     }
 }
 
