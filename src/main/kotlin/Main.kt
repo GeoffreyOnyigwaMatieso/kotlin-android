@@ -291,6 +291,13 @@ fun main() {
         println("Has room? ${squareCabin.hasRoom()}")
     }
 
+    val roundHut = RoundHut(3)
+    with (roundHut) {
+        println("\nRound Hut\n=========")
+        println("Capacity: ${roundHut.capacity}")
+        println("Material: ${roundHut.buildingMaterial}")
+        println("Has room? ${roundHut.hasRoom()}")
+    }
 
 }
 
@@ -321,5 +328,10 @@ abstract class Dwelling(private var residents: Int) {
 class SquareCabin(residents: Int) : Dwelling(residents) {
     override val buildingMaterial: String = "Wood"
     override val capacity: Int = 6
+}
+
+class RoundHut(residents: Int) : Dwelling(residents) {
+    override val buildingMaterial: String = "Straw"
+    override val capacity: Int = 4
 }
 
