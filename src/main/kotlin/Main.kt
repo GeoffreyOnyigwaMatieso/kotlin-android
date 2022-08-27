@@ -289,7 +289,7 @@ class Dice(
  * abstract class, overriding, and private vs. public variables.
  */
 
-import kotlin.math.PI
+/* import kotlin.math.PI
 import kotlin.math.sqrt
 
 fun main() {
@@ -412,4 +412,31 @@ class RoundTower(residents: Int, val floors: Int = 2, radius: Double) : RoundHut
     override fun floorArea(): Double {
         return super.floorArea() * floors
     }
+} */
+
+/*
+    * Use Lists in Kotlin
+ */
+
+/* fun main() {
+    // val numbers: List<Int> = listOf(1, 2, 3, 4, 5, 6)
+    val numbers = listOf(1, 2, 3, 4, 5, 6)
+    println("List of numbers: $numbers")
+    println("First number: ${numbers[0]}")
+
+    // Kotlin also supports first() and last() functions
+    println("First number: ${numbers.first()}")
+    println("Last number: ${numbers.last()}")
+    // Contains function to check if a number is in the list
+    println("Contains 3: ${numbers.contains(3)}")
+    println("Contains 7: ${numbers.contains(7)}")
+    println("Size: ${numbers.size}")
+} */
+
+fun main() {
+    // Lists are read-only
+    val colors = listOf("green", "orange", "blue")
+    println("List: $colors")
+    println("Reversed list: ${colors.reversed()}")
+    println("Sorted list: ${colors.sorted()}")
 }
