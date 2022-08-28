@@ -433,10 +433,36 @@ class RoundTower(residents: Int, val floors: Int = 2, radius: Double) : RoundHut
     println("Size: ${numbers.size}")
 } */
 
-fun main() {
+/* fun main() {
     // Lists are read-only
     val colors = listOf("green", "orange", "blue")
     println("List: $colors")
     println("Reversed list: ${colors.reversed()}")
     println("Sorted list: ${colors.sorted()}")
+} */
+
+fun main() {
+    // Mutable Lists
+    val entrees: MutableList<String> = mutableListOf("Beef", "Chicken", "Pork")
+    println("List: $entrees")
+    println("Add noodles: ${entrees.add("Noodles")}")
+    println("List: $entrees")
+
+    val moreItems = listOf("ravioli", "salad", "soup")
+    println("Add list: ${entrees.addAll(moreItems)}")
+    println("List: $entrees")
+
+    // Remove elements from a list
+    println("Remove Beef: ${entrees.remove("Beef")}")
+    println("List: $entrees")
+
+    // Remove at a specific index
+    println("Remove at index 1: ${entrees.removeAt(2)}")
+    println("Entrees: $entrees")
+
+    // If you want to remove all elements from a list, use clear()
+    entrees.clear()
+    println("Entrees: $entrees")
+    println("Empty? ${entrees.isEmpty()}")
+
 }
