@@ -441,7 +441,7 @@ class RoundTower(residents: Int, val floors: Int = 2, radius: Double) : RoundHut
     println("Sorted list: ${colors.sorted()}")
 } */
 
-fun main() {
+/* fun main() {
     // Mutable Lists
     val entrees: MutableList<String> = mutableListOf("Beef", "Chicken", "Pork")
     println("List: $entrees")
@@ -465,4 +465,61 @@ fun main() {
     println("Entrees: $entrees")
     println("Empty? ${entrees.isEmpty()}")
 
+} */
+
+/*
+    * Loops through a list
+ */
+
+/* fun main() {
+    val guestsPerFamily = listOf(2, 4, 1, 3)
+    var totalGuests = 0
+    var index = 0
+
+    while(index < guestsPerFamily.size) {
+        totalGuests += guestsPerFamily[index]
+        index++
+    }
+
+    println("Total Guest Count: $totalGuests")
+
+    // For Loop
+    val names = listOf("John", "Lynne", "Maria", "Bob")
+    for (name in names) {
+        println(name)
+        println("Number of characters in $name: ${name.length}")
+    }
+} */
+
+open class Item(val name: String, val price: Int)
+
+/**
+ * Class Noodles that inherits from Item
+ */
+class Noodles : Item("Noodles", 3) {
+    override fun toString() :String {
+        return name
+    }
+}
+
+/**
+ * Class Vegetables that inherits from Item
+ */
+class Vegetables (vararg val toppings: String) : Item("Vegetables", 5) {
+    override fun toString() :String {
+        if (toppings.isEmpty()) {
+            return "$name Chef's Special"
+        } else {
+            return name + " " + toppings.joinToString()
+        }
+    }
+}
+
+fun main() {
+    val noodles = Noodles()
+    val vegetables = Vegetables("Cabbage", "Spinach", "Carrots")
+    val vegetables2 = Vegetables()
+    println(noodles)
+    println(vegetables)
+    println(vegetables2)
 }
