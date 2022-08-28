@@ -539,21 +539,25 @@ class Order(val orderNumber: Int) {
 }
 
 fun main() {
+    val ordersList = mutableListOf<Order>()
+
     val order1 = Order(1)
     order1.addItem(Noodles())
-    order1.print()
-
-    println()
+    ordersList.add(order1)
 
     val order2 = Order(2)
-    order2.addItem(Noodles())
     order2.addItem(Vegetables("tomato", "onion"))
-    order2.print()
-
-    println()
+    ordersList.add(order2)
 
     val order3 = Order(3)
     val items = listOf(Noodles(), Vegetables("tomato", "onion"))
     order3.addAll(items)
-    order3.print()
+    ordersList.add(order3)
+
+
+    // Print the orders
+    for (order in ordersList) {
+        order.print()
+        println()
+    }
 }
