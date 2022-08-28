@@ -518,12 +518,14 @@ class Vegetables (vararg val toppings: String) : Item("Vegetables", 5) {
 class Order(val orderNumber: Int) {
     private val itemList = mutableListOf<Item>()
 
-    fun addItem(newItem: Item) {
+    fun addItem(newItem: Item) : Order {
         itemList.add(newItem)
+        return this
     }
 
-    fun addAll(newItems: List<Item>){
+    fun addAll(newItems: List<Item>) : Order{
         itemList.addAll(newItems)
+        return this
     }
 
     fun print(){
@@ -553,6 +555,14 @@ fun main() {
     val items = listOf(Noodles(), Vegetables("tomato", "onion"))
     order3.addAll(items)
     ordersList.add(order3)
+
+    val order4 = Order(4).addItem(Noodles()).addItem(Vegetables("Cabbage", "Onion"))
+    ordersList.add(order4)
+
+    ordersList.add(
+        Order(5).addItem(Noodles()).addItem(Noodles())
+            .addItem(Vegetables("Spinach"))
+    )
 
 
     // Print the orders
