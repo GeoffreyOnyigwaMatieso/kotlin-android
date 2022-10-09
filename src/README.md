@@ -683,7 +683,7 @@ Carol is 31 years old
 Joe is 51 years old
 ```
 
-###Filter
+### Filter
 The filter() function returns a list containing only elements matching the given predicate.
 
 ```kotlin
@@ -694,4 +694,19 @@ println("people older than 30: ${filteredNames}")
 **Output**
 ```
 people older than 30: {Carol=31, Joe=51}
+```
+
+### Lambda and Higher-Order Functions
+A lambda expression is a function literal, i.e. a function that is not declared, but passed immediately as an expression.
+
+```kotlin
+fun main() {
+    val triple: (Int) -> Int = { a: Int -> a * 3 }
+    println(triple(5))
+}
+```
+
+**Output**
+```
+15
 ```
