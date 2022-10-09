@@ -625,7 +625,7 @@ fun main() {
         "mission"
     )
     val filteredWords = wordListOne.filter { word -> word.length > 6 }
-    val wordsStartWith =  wordListTwo.filter { it.startsWith("s", ignoreCase = true)}.shuffled()
+    val wordsStartWith =  wordListTwo.filter { it.startsWith("s", ignoreCase = true)}.shuffled().take(1).sorted()
     println(filteredWords)
     println(wordsStartWith)
 }
