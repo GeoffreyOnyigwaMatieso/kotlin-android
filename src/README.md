@@ -604,3 +604,94 @@ else{
 ### Packages and imports
 
 </details>
+
+# ANDROID
+## Collections in Kotlin
+Collection is a group of related items, like a list of words, or a set of records. Kotlin provides a set of built-in collections that you can use to store and manipulate data.
+
+```kotlin
+fun main() {
+    val numbers = listOf(1, 2, 3, 4, 5, 3, 2, 1)
+    println("list: ${numbers}")
+}
+```
+**Output**
+```
+list: [1, 2, 3, 4, 5, 3, 2, 1]
+```
+
+### Set
+A set is a collection that contains no duplicate elements. It is useful to remove duplicates from a collection.
+
+```kotlin
+
+val setOfNumbers = numbers.toSet()
+println("set: ${setOfNumbers}")
+```
+
+**Output**
+```
+set: [1, 2, 3, 4, 5]
+```
+
+### Maps
+Map is a set of key-value pairs. Each key is unique and is used to retrieve the corresponding value.
+
+```kotlin
+fun main() {
+val peopleAges = mutableMapOf<String, Int>(
+    "Alice" to 21,
+    "Bob" to 25
+)
+println("map: ${peopleAges}")
+}
+```
+
+This creates a mutable map with two key-value pairs. The `to` function creates a pair of two values.
+
+**Output**
+```
+map: {Alice=21, Bob=25}
+```
+
+To add more entries to the map, you can use the put() function, passing the key and value as arguments.
+
+```kotlin
+peopleAges.put("Carol", 31)
+```
+
+You can also use a shorthand notation to add entries:
+
+```kotlin
+peopleAges["Joe"] = 51
+```
+
+**Output**
+```
+map: {Alice=21, Bob=25, Carol=31, Joe=51}
+```
+
+```kotlin
+peopleAges.forEach{ (key, value) -> println("$key is $value years old") }
+```
+
+**Output**
+```
+Alice is 21 years old
+Bob is 25 years old
+Carol is 31 years old
+Joe is 51 years old
+```
+
+###Filter
+The filter() function returns a list containing only elements matching the given predicate.
+
+```kotlin
+val filteredNames = peopleAges.filter { (key, value) -> value > 30 }
+println("people older than 30: ${filteredNames}")
+```
+
+**Output**
+```
+people older than 30: {Carol=31, Joe=51}
+```
