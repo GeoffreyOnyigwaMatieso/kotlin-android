@@ -491,7 +491,7 @@ class RoundTower(residents: Int, val floors: Int = 2, radius: Double) : RoundHut
     }
 } */
 
-open class Item(val name: String, val price: Int)
+/* open class Item(val name: String, val price: Int)
 
 /**
  * Class Noodles that inherits from Item
@@ -570,4 +570,62 @@ fun main() {
         order.print()
         println()
     }
+} */
+
+/*
+    * Make word lists
+ */
+fun main() {
+    val wordListOne = listOf(
+        "24/7",
+        "multi-Tier",
+        "30,000 foot",
+        "B-to-B",
+        "win-win",
+        "front-end",
+        "web-based",
+        "pervasive",
+        "smart",
+        "six-sigma",
+        "critical-path",
+        "dynamic"
+    )
+    val wordListTwo = listOf(
+        "empowered",
+        "sticky",
+        "value-added",
+        "oriented",
+        "centric",
+        "distributed",
+        "clustered",
+        "branded",
+        "outside-the-box",
+        "positioned",
+        "networked",
+        "focused",
+        "leveraged",
+        "aligned",
+        "targeted",
+        "shared",
+        "cooperative",
+        "accelerated"
+    )
+    val wordListThree = listOf(
+        "process",
+        "tipping-point",
+        "solution",
+        "architecture",
+        "core competency",
+        "strategy",
+        "mindshare",
+        "portal",
+        "space",
+        "vision",
+        "paradigm",
+        "mission"
+    )
+    val filteredWords = wordListOne.filter { word -> word.length > 6 }
+    val wordsStartWith =  wordListTwo.filter { it.startsWith("s", ignoreCase = true)}.shuffled()
+    println(filteredWords)
+    println(wordsStartWith)
 }
