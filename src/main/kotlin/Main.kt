@@ -635,4 +635,17 @@ fun main() {
     for (i in myListOfNames.indices) {
         println("Index: $i, Name: ${myListOfNames[i]}")
     }
+    myListOfNames.forEach() {
+        println(it)
+    }
+
+    val myMutableList = mutableListOf(12, 34, 45, 76, 89)
+    myMutableList.add(1, 100)
+    myMutableList.removeAt(2)
+    for (i in myMutableList.indices) {
+        println("Index: $i, Value: ${myMutableList[i]}")
+    }
+    println("Number of elements: ${myMutableList.size}")
+    println("Second element: ${myMutableList[1]}")
+    println("Index of element \"45\": ${myMutableList.indexOf(45)}")
 }
