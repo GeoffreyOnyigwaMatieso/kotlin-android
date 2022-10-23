@@ -575,7 +575,7 @@ fun main() {
 /*
     * Make word lists
  */
-fun main() {
+/* fun main() {
     val wordListOne = listOf(
         "24/7",
         "multi-Tier",
@@ -628,4 +628,11 @@ fun main() {
     val wordsStartWith =  wordListTwo.filter { it.startsWith("s", ignoreCase = true)}.shuffled().take(1).sorted()
     println(filteredWords)
     println(wordsStartWith)
+} */
+
+fun main() {
+    val myListOfNames = listOf("John", "Lynne", "Maria", "Bob")
+    for (i in myListOfNames.indices) {
+        println("Index: $i, Name: ${myListOfNames[i]}")
+    }
 }
