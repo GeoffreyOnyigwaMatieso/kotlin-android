@@ -648,4 +648,57 @@ fun main() {
     println("Number of elements: ${myMutableList.size}")
     println("Second element: ${myMutableList[1]}")
     println("Index of element \"45\": ${myMutableList.indexOf(45)}")
+
+    // Set
+    val mySet = setOf("US", "KE", "UG", "TZ", "KE")
+    val myMutableSet = mutableSetOf(1, 3, 5, 7, 8)
+    myMutableSet.add(9)
+    myMutableSet.add(3)
+    println(mySet)
+    println(myMutableSet)
+
+    // Map
+    val secretMap = mapOf("Up" to 1, "Down" to 2, "Left" to 3, "Right" to 4)
+    println(secretMap["Up"])
+    println(secretMap.values)
+    if (4 in secretMap.values) {
+        println("Yes is in!")
+    }
+    val myMutableSecretMap = mutableMapOf("One" to 1, "Two" to 2, "Three" to 3)
+    myMutableSecretMap.put("Four", 4)
+    myMutableSecretMap.replace("Four", 4, 5)
+    println(myMutableSecretMap)
+
+    val myNewList = mutableListOf<String>()
+    myNewList.add(4.toString())
+    myNewList.add("Lynne")
+    println(myNewList)
+    for (i in 1..10){
+        myNewList.add(i.toString())
+    }
+    println(myNewList)
+
+    val myNewSet = mutableSetOf<String>("Lynne", "Maria", "John")
+    myNewSet.add("Alicia")
+    myNewSet.add("Maria")
+    println(myNewSet)
+
+    // Empty collections
+    val empty = emptyList<String>()
+    val emptySet = emptySet<Int>()
+    val emptyMap = emptyMap<String, Int>()
+
+    // Collection Filters
+    val myNumbers = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    myNumbers.filter { it % 2 == 0}.forEach { println(it) }
+    val results = myNumbers.filter {
+        it > 4
+    }
+    println(results)
+
+    val names = listOf("Alicia, Lynne, Maria, John, Bob")
+    val myNames = names.filter{
+        it.startsWith("A", ignoreCase = true)
+    }
+    println(myNames)
 }
