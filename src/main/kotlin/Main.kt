@@ -704,6 +704,7 @@ fun main() {
     val car = Car("Yellow", "CX60")
     val secondCar = Car(color = "Purple", model = "Civic")
     secondCar.color = "Red"
+    secondCar.speed(40, 100)
     println("Second Car: ${secondCar.color}, ${secondCar.model}")
     car.color = "Blue"
     car.model = "BMW"
@@ -726,6 +727,9 @@ class Car(var color: String, var model: String) {
     //Methods
     fun drive() {
         println("Driving")
+    }
+    fun speed(minSpeed: Int, maxSpeed: Int) {
+        println("Speeding")
     }
 
 }
