@@ -701,4 +701,21 @@ fun main() {
         it.startsWith("A", ignoreCase = true)
     }
     println(myNames)
+    val car = Car()
+    val secondCar = Car(color = "Purple", model = "Civic")
+    println("Second Car: ${secondCar.color}, ${secondCar.model}")
+    car.color = "Blue"
+    car.model = "BMW"
+    println(car.color)
+    println(car.model)
+    println(car.drive())
+}
+
+class Car(var color: String = "Red", var model: String = "BMW") {
+
+    //Methods
+    fun drive() {
+        println("Driving")
+    }
+
 }
