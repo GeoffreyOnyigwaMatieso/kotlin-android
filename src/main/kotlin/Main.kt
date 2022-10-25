@@ -749,7 +749,7 @@ class Truck(color: String, model: String): Car(color, model) {
     }
 } */
 
-fun main() {
+/* fun main() {
     val button = Button(label = "Submit")
     button.onClick("Your work has been submitted")
 
@@ -770,4 +770,19 @@ class Character(val name: String): ClickEvent {
 //Interface
 interface ClickEvent {
     fun onClick(message: String)
+} */
+
+fun main() {
+    val myString = "cat"
+    println(myString.append("Walk"))
+    println(myString.removeFirstLastChar())
+}
+
+// Extension Functions
+fun String.append(value: String): String {
+    return this.plus(value)
+}
+
+fun String.removeFirstLastChar(): String {
+    return this.drop(1).dropLast(1)
 }
