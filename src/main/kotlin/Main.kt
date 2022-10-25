@@ -772,7 +772,7 @@ interface ClickEvent {
     fun onClick(message: String)
 } */
 
-fun main() {
+/* fun main() {
     val myString = "cat"
     println(myString.append("Walk"))
     println(myString.removeFirstLastChar())
@@ -785,4 +785,16 @@ fun String.append(value: String): String {
 
 fun String.removeFirstLastChar(): String {
     return this.drop(1).dropLast(1)
+} */
+
+fun main() {
+    val user = User("Lynne", 21, "munini@gmail.com")
+    println(user)
+    val listOfUsers = listOf(user, User("Maria", 22, "maria@gmail.com"), User("John", 23, "John@gmail.com"))
+    println(listOfUsers)
+    listOfUsers.forEach {
+        println(it.age)
+    }
 }
+// Data Classes
+data class User(val name: String, val age: Int, val email: String)
