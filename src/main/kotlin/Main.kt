@@ -701,8 +701,9 @@ fun main() {
         it.startsWith("A", ignoreCase = true)
     }
     println(myNames)
-    val car = Car()
+    val car = Car("Yellow", "CX60")
     val secondCar = Car(color = "Purple", model = "Civic")
+    secondCar.color = "Red"
     println("Second Car: ${secondCar.color}, ${secondCar.model}")
     car.color = "Blue"
     car.model = "BMW"
@@ -711,7 +712,16 @@ fun main() {
     println(car.drive())
 }
 
-class Car(var color: String = "Red", var model: String = "BMW") {
+class Car(var color: String, var model: String) {
+    init {
+        if (color == "Red") {
+            println("This is a red car")
+        }
+        else {
+            println("This is not a red car")
+        }
+
+    }
 
     //Methods
     fun drive() {
