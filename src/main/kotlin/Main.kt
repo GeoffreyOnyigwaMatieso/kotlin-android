@@ -711,9 +711,14 @@ fun main() {
     println(car.color)
     println(car.model)
     println(car.drive())
+
+    // Truck
+    val truck = Truck("Magenta", "F16")
+    truck.drive()
+    truck.tow()
 }
 
-class Car(var color: String, var model: String) {
+open class Car(var color: String, var model: String) {
     init {
         if (color == "Red") {
             println("This is a red car")
@@ -721,15 +726,25 @@ class Car(var color: String, var model: String) {
         else {
             println("This is not a red car")
         }
-
     }
-
     //Methods
-    fun drive() {
+    open fun drive() {
         println("Driving")
     }
-    fun speed(minSpeed: Int, maxSpeed: Int) {
+    open fun speed(minSpeed: Int, maxSpeed: Int) {
         println("Speeding")
     }
+}
 
+class Truck(color: String, model: String): Car(color, model) {
+    fun tow() {
+        println("Towing")
+    }
+    override fun speed(minSpeed: Int, maxSpeed: Int) {
+        println("Truck is Speeding")
+    }
+    override fun drive() {
+        // super.drive()
+        println("Truck is Driving")
+    }
 }
