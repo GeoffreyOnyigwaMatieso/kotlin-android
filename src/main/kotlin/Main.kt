@@ -630,7 +630,7 @@ fun main() {
     println(wordsStartWith)
 } */
 
-fun main() {
+/* fun main() {
     val myListOfNames = listOf("John", "Lynne", "Maria", "Bob")
     for (i in myListOfNames.indices) {
         println("Index: $i, Name: ${myListOfNames[i]}")
@@ -747,4 +747,27 @@ class Truck(color: String, model: String): Car(color, model) {
         // super.drive()
         println("Truck is Driving")
     }
+} */
+
+fun main() {
+    val button = Button(label = "Submit")
+    button.onClick("Your work has been submitted")
+
+    val character = Character(name = "Lynne")
+    character.onClick("You have clicked on Lynne")
+}
+class Button(val label: String): ClickEvent {
+    override fun onClick(message: String) {
+        println("Clicked by $label and here's the message $message")
+    }
+}
+
+class Character(val name: String): ClickEvent {
+    override fun onClick(message: String) {
+        println("Clicked by $name and here's the message $message")
+    }
+}
+//Interface
+interface ClickEvent {
+    fun onClick(message: String)
 }
