@@ -801,14 +801,15 @@ data class User(val name: String, val age: Int, val email: String) */
 
 fun main() {
     val listOfItems = listOf("Lynne", "Maria", "John", "Alicia")
-    val finder = Finder(listOfItems)
-    finder.findItem(item = "Maria") {
+    val listOfNumbers = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    val finder = Finder(listOfNumbers)
+    finder.findItem(item = 8) {
         println("Found $it")
     }
 }
 
-class Finder (private val list: List<String>) {
-    fun findItem(item: String, foundItem: (item: String?) -> Unit) {
+class Finder<T> (private val list: List<T>) {
+    fun findItem(item: T, foundItem: (item: T?) -> Unit) {
         val itemFoundList = list.filter {
             it == item
         }
