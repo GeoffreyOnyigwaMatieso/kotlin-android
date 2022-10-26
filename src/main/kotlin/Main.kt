@@ -1,4 +1,6 @@
+import java.io.IOException
 import java.lang.Exception
+import java.lang.NullPointerException
 
 /* Problem
 * Each day a family consumes 15 litres of water
@@ -827,6 +829,10 @@ fun main() {
     getResult(result = Repository.getCurrentState())
     Repository.errorFetch()
     getResult(result = Repository.getCurrentState())
+    Repository.customFailure()
+    getResult(result = Repository.getCurrentState())
+    Repository.anotherFailure()
+    getResult(result = Repository.getCurrentState())
 }
 fun getResult(result: Result) {
     return when(result){
@@ -842,9 +848,13 @@ fun getResult(result: Result) {
         is NotLoading -> {
             println("Not Loading...")
         }
-        else -> {
-            println("Unknown")
+        is Failure.AnotherFailure -> {
+            println(result.anotherFailure.toString())
         }
+        is Failure.CustomFailure -> {
+            println(result.customFailure.toString())
+        }
+
     }
 }
 
@@ -866,6 +876,12 @@ object Repository {
     fun getCurrentState(): Result {
         return loadState
     }
+    fun customFailure() {
+        loadState = Failure.CustomFailure(customFailure = IOException("Custom Failure"))
+    }
+    fun anotherFailure() {
+        loadState = Failure.AnotherFailure(anotherFailure = NullPointerException("Something went wrong!"))
+    }
     fun getItems(): List<String> {
         return listOf("Lynne", "Maria", "John", "Alicia")
     }
@@ -878,10 +894,14 @@ object Repository {
     IDLE,
     LOADING
 } */
-abstract class Result
+sealed class Result
 
 data class Success(val dataFetched:String?): Result()
 data class Error(val exception: Exception): Result()
 object NotLoading: Result()
 object Loading: Result()
 
+sealed class Failure: Result() {
+    data class CustomFailure(val customFailure: IOException): Failure()
+    data class AnotherFailure(val anotherFailure: NullPointerException): Failure()
+}
