@@ -787,7 +787,7 @@ fun String.removeFirstLastChar(): String {
     return this.drop(1).dropLast(1)
 } */
 
-fun main() {
+/* fun main() {
     val user = User("Lynne", 21, "munini@gmail.com")
     println(user)
     val listOfUsers = listOf(user, User("Maria", 22, "maria@gmail.com"), User("John", 23, "John@gmail.com"))
@@ -797,4 +797,22 @@ fun main() {
     }
 }
 // Data Classes
-data class User(val name: String, val age: Int, val email: String)
+data class User(val name: String, val age: Int, val email: String) */
+
+fun main() {
+    val listOfItems = listOf("Lynne", "Maria", "John", "Alicia")
+    val finder = Finder(listOfItems)
+    finder.findItem(item = "Maria") {
+        println("Found $it")
+    }
+}
+
+class Finder (private val list: List<String>) {
+    fun findItem(item: String, foundItem: (item: String?) -> Unit) {
+        val itemFoundList = list.filter {
+            it == item
+        }
+        if (itemFoundList.isNullOrEmpty()) foundItem(null)
+        else foundItem(itemFoundList[0])
+    }
+}
