@@ -1,3 +1,5 @@
+import java.lang.Exception
+
 /* Problem
 * Each day a family consumes 15 litres of water
 * Given the number of years as input, you need to calculate and output the amount of water
@@ -828,27 +830,37 @@ fun main() {
 }
 fun getResult(result: Result) {
     return when(result){
-        Result.SUCCESS -> println("Success")
-        Result.FAILURE -> println("Failure")
-        Result.ERROR -> println("Error")
-        Result.IDLE -> println("Idle")
-        Result.LOADING -> println("Loading...")
+        is Error -> {
+            println(result.exception.toString())
+        }
+        is Success -> {
+            println(result.dataFetched?: "Ensure you start the fetch function first")
+        }
+        is Loading -> {
+            println("Loading...")
+        }
+        is NotLoading -> {
+            println("Not Loading...")
+        }
+        else -> {
+            println("Unknown")
+        }
     }
 }
 
 object Repository {
-    private var loadState: Result = Result.IDLE
+    private var loadState: Result = NotLoading
     private var dataFetched: String? = null
     fun startFetch() {
-        loadState = Result.LOADING
+        loadState = Loading
         dataFetched = "data"
     }
     fun finishedFetch() {
-        loadState = Result.SUCCESS
+        loadState = Success(dataFetched)
         dataFetched = null
     }
     fun errorFetch() {
-        loadState = Result.ERROR
+        loadState = Error(exception = Exception("Error"))
         dataFetched = null
     }
     fun getCurrentState(): Result {
@@ -859,10 +871,17 @@ object Repository {
     }
 }
 
-enum class Result {
+/* enum class Result {
     SUCCESS,
     FAILURE,
     ERROR,
     IDLE,
     LOADING
-}
+} */
+abstract class Result
+
+data class Success(val dataFetched:String?): Result()
+data class Error(val exception: Exception): Result()
+object NotLoading: Result()
+object Loading: Result()
+
