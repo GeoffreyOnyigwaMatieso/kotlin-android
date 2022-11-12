@@ -5,3 +5,4 @@ target/
 *.class
 *.log
 kotlin-android.iml
+kotlin/out
